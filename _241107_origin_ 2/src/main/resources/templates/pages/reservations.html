@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/default_layout}">
+<head>
+    <title>main homepage</title>
+    <link rel="stylesheet" th:inline="css" th:href="@{/css/mmenu/msub_booking.css}">
+    <link rel="stylesheet" th:inline="css" th:href="@{/css/mmenu/msub1.css}">
+    <script th:inline="javascript" type="text/javascript" th:src="@{/js/main.js}"></script>
+    <script th:inline="javascript" type="text/javascript" th:src="@{/js/mmenu1/msub1.js}"></script>
+</head>
+<th:block layout:fragment="content">
+    <div class="content">
+        <!--부킹 내 header-->
+        <div class="booking-header">
+            <div class="image-container">
+                <img src="/img/mmenu1/lgogo.jpg" alt="이미지 설명">
+                <nav class="booking-nav">
+                    <ul>
+                        <li><a href="/rest" class="active">온라인예약</a></li>
+                        <li><a href="/kakao" class="#">카카오톡예약</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!--부킹 내 body-->
+        <div class="booking-body">
+            <div class="booking-body-logo">
+                <span class="bold-text">실시간 온라인예약</span><br>
+                <span class="small-text">실시간으로 간편하게 예약해보세요</span>
+            </div>
+            <div class="form-box">
+                <div class="reservation-form">
+                    <form action="/submit-reservation" method="post" id="reservation-form">
+                        <!-- 이름과 연락처를 한 줄에 배치 -->
+                        <div class="input-group">
+                            <div class="input-item">
+                                <label for="name">이름</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="input-item">
+                                <label for="phonumber">연락처</label>
+                                <input type="text" id="phonumber" name="phonumber" required>
+                            </div>
+                        </div>
+
+                        <label for="reservation-date">예약일</label>
+                        <input type="date" id="reservation-date" name="reservation-date" required>
+                    </form>
+                </div>
+                <div class="reservation-details">
+                    <h3>예약 상세</h3>
+                    <div id="details-content">
+                        <!-- 예약 상세 내용이 여기에 표시됩니다. -->
+                    </div>
+                </div>
+        </div>
+     </div>
+    </div>
+    <!--부킹 내 body-->
+</th:block>
+</html>

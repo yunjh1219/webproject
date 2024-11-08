@@ -1,0 +1,31 @@
+/* 전체 페이지 스타일 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif; /* 기본 글꼴 설정 */
+    margin: 0; /* 기본 마진 제거 */
+    padding: 0; /* 기본 패딩 제거 */
+}
+
+
+/* 콘텐츠 스타일 */
+/* ------------------------------------------------------------ */
+.content {
+    background-color: orange; /* 콘텐츠 배경 색상 */
+    min-height: 400px; /* 최소 높이 설정 */
+    margin: 0; /* 마진 제거 */
+
+}
+
+/* 푸터 스타일 */
+/* ------------------------------------------------------------ */
+footer {
+    background-color: #333; /* 푸터 배경 색상 */
+    color: white; /* 글자 색상 */
+    width: 100%; /* 전체 너비 설정 */
+}
