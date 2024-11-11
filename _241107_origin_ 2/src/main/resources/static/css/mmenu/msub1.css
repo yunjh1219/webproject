@@ -1,125 +1,103 @@
+/* 부킹 바디 스타일 */
+.booking-body{
+    position: relative;
+    height:100%;
+    width: 100%;
 
-/* 폼 박스 스타일 */
-.form-box {
-    margin: 0 auto;
+    text-align: center; /*body-logo 가운데로*/
+    justify-items: center; /*form-box 가운데로*/
+}
+
+.booking-body .form-box{
     position: relative; /* 절대 위치 설정 */
     display: flex;
-    justify-content: center; /* 중앙 정렬 */
-    width: 60%; /* 너비를 설정 */
-    height: auto; /* 높이를 내용에 맞게 설정 */
-    background-color: #c75e5e; /* 배경색을 검정색으로 설정 */
-    border-radius: 15px; /* 모서리를 둥글게 설정 */
-    padding: 20px; /* 박스 안쪽 여백을 설정 */
+
+    width: 1000px;
+    height: 800px;
+    /*background-color: #c75e5e;*/
+    background-color: #333333;
+    border-radius: 20px; /* 모서리를 둥글게 설정 */
+
+    padding: 40px; /* 박스 안쪽 여백을 설정 */
+    justify-content: space-between; /*내부 예약/디테일 설정*/
+}
+
+.form-box .reservation-form{
+    display: flex;
+
+    width: 100%;
+    /*background-color: #333333;*/
+    background-color: white;
+    border-radius: 20px; /* 모서리를 둥글게 설정 */
+
+
+    padding: 20px;
     box-sizing: border-box; /* 패딩을 포함한 너비 계산 */
+    border-right: 3px solid teal;
 }
 
 /* 폼 스타일 */
 .reservation-form {
-    width: 100%;
-    background-color: #f8f8f8;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-sizing: border-box; /* 패딩을 포함한 너비 계산 */
-}
-
-.reservation-form label {
-    font-weight: bold;
-    margin-bottom: 5px;
-    width: 100%; /* 라벨 너비를 100%로 설정 */
-}
-
-.reservation-form input, .reservation-form select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box; /* 패딩을 포함한 너비 계산 */
-}
-
-.reservation-form button {
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.reservation-form button:hover {
-    background-color: #0056b3;
-}
-
-/* 텍스트 스타일 */
-.booking-body-logo {
-    text-align: center;
-    line-height: 1.5;
-    margin-bottom: 20px; /* 여백 추가 */
-}
-
-.bold-text {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-}
-
-.small-text {
-    font-size: 14px;
-    color: #555;
-}
-
-/* 예약 상세 스타일 */
-.reservation-details {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 45%; /* 예약 상세 폼의 너비 설정 */
     background-color: #f8f8f8;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     box-sizing: border-box; /* 패딩을 포함한 너비 계산 */
+    width: 100%; /* 전체 너비 사용 */
 }
 
-.reservation-details h3 {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-.reservation-details p {
-    font-size: 16px;
-    margin: 5px 0;
-}
-
-/* 이름, 연락처, 예약일을 한 줄에 배치 */
 .input-group {
     display: flex;
-    gap: 15px; /* 각 항목 간의 간격 */
+    gap: 20px; /* 항목 간격 조정 */
+    padding: 20px;
+    border-bottom: 1px solid silver; /* 그룹 간의 구분선 */
+    align-items: center; /* 항목 수직 중앙 정렬 */
 }
 
-/* 각 입력 항목을 flex로 균등하게 배치 */
-.input-item {
-    flex: 1; /* 각 입력 항목이 동일한 비율로 크기를 가짐 */
+.input-group:last-child {
+    border-bottom: none; /* 마지막 요소의 구분선 제거 */
 }
 
-/* 각 입력 항목의 입력 필드 스타일 */
-.input-item input {
-    width: 100%; /* 입력 필드가 부모 요소의 너비를 100% 차지 */
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.input-group .input-item {
+    display: flex;
+    align-items: center; /* 항목 수직 중앙 정렬 */
+    justify-content: space-between; /* 레이블과 입력 필드 양끝에 위치 */
+    min-width: 300px;
+    background-color: #007BFF;
+    width: 100%;
+    height: 100%
 }
 
-/* 레이블 스타일 */
-.input-item label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
+.input-item > label {
+    background-color: #c75e5e;
+    width: 80px; /* 레이블의 고정 너비 설정 */
+    text-align: left; /* 레이블 텍스트 왼쪽 정렬 */
+}
+
+.input-item > input {
+    width: calc(100% - 80px); /* 입력 필드가 나머지 공간 차지 */
+    padding: 20px 10px;
+    box-sizing: border-box; /* 패딩 포함한 너비 계산 */
+}
+
+
+.input-item > select {
+    flex: 1;
+    width: calc(100% - 80px); /* 입력 필드가 나머지 공간 차지 */
+    font-size: 16px; /* 글자 크기 설정 */
+    padding: 20px 10px;
+    box-sizing: border-box; /* 패딩을 포함한 전체 크기 계산 */
+}
+
+.input-item > #hour-select {
+    margin-right: 10px; /* 첫 번째 요소의 오른쪽에만 10px의 공백 추가 */
+}
+
+
+.input-item > textarea#text {
+    position: relative;
+    width: 100%; /* 텍스트 영역이 부모의 너비를 차지 */
+    height: 200px; /* 텍스트 영역의 높이 설정 */
+    box-sizing: border-box; /* 패딩과 보더를 포함하여 계산 */
+    resize: none; /* 크기 조절 불가 */
 }

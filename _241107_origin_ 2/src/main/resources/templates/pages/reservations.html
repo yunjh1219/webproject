@@ -36,19 +36,88 @@
                         <!-- 이름과 연락처를 한 줄에 배치 -->
                         <div class="input-group">
                             <div class="input-item">
+
                                 <label for="name">이름</label>
                                 <input type="text" id="name" name="name" required>
+
                             </div>
+
                             <div class="input-item">
                                 <label for="phonumber">연락처</label>
                                 <input type="text" id="phonumber" name="phonumber" required>
                             </div>
+
                         </div>
 
-                        <label for="reservation-date">예약일</label>
-                        <input type="date" id="reservation-date" name="reservation-date" required>
+                        <div class="input-group">
+
+                          <div class="input-item">
+                            <label for="email">이메일</label>
+                            <input type="text" id="email" name="email" required>
+                          </div>
+                            <div class="input-item">
+                              <label>성별</label>
+                                <label>
+                                    <input type="radio" name="gender" value="female"> 여(F)
+                                </label>
+                                <label>
+                                    <input type="radio" name="gender" value="male"> 남(M)
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                           <div class="input-item">
+                              <label for="name">예약일</label>
+                               <input type="date" id="reservation-date" name="reservation-date" required>
+                           </div>
+
+                            <div class="input-item">
+                                <select id="hour-select" name="hour-select" required>
+                                    <option value="AM 11">AM 11</option>
+                                    <option value="PM 12">PM 12</option>
+                                    <option value="PM 01">PM 01</option>
+                                    <option value="PM 02">PM 02</option>
+                                    <option value="PM 03">PM 03</option>
+                                    <option value="PM 04">PM 04</option>
+                                    <option value="PM 05">PM 05</option>
+                                    <option value="PM 06">PM 06</option>
+                                </select>
+                                <select id="minutes-select" name="minutes-select" required>
+                                    <option value="00">00</option>
+                                    <option value="20">20</option>
+                                    <option value="40">40</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <div class="input-group">
+                            <div class="input-item">
+                                <label for="name">시술부위</label>
+                                <select id="Treatment1" name="Treatment1" required>
+                                    <option value="얼굴">얼굴</option>
+                                    <option value="몸">몸</option>
+                                    <option value="다리">다리</option>
+                                </select>
+                            </div>
+
+                            <div class="input-item">
+                                <select id="Treatment2" name="Treatment2" required>
+                                    <!-- 초기 옵션을 비워둡니다. JavaScript가 동적으로 추가할 것입니다. -->
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-item">
+                                <textarea id="text" name="text" required></textarea>
+                        </div>
+                        </div>
                     </form>
                 </div>
+
+
+
                 <div class="reservation-details">
                     <h3>예약 상세</h3>
                     <div id="details-content">

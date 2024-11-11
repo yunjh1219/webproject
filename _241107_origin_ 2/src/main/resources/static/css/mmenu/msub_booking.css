@@ -11,6 +11,8 @@
     flex-direction: column;
     align-items: center; /* 수평 중앙 정렬 */
     display: flex;
+
+    min-height: 1500px;
 }
 
 /* 부킹 헤더 스타일 */
@@ -80,16 +82,9 @@
     color: rgba(51, 51, 51, 1);
 }
 
-/* 부킹 바디 스타일 */
-.booking-body{
-    position: relative;
-    height: 80px;
-    width: 100%;
-
-    text-align: center;
-}
 
 
+/**/
 .booking-body-logo{
     margin: 30px 0px;
 }
