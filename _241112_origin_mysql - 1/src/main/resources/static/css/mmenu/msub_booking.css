@@ -1,7 +1,7 @@
 /* 콘텐츠 스타일 */
 .content {
     position: relative;
-    background-color: #f8f8f8; /* 콘텐츠 배경 색상 */
+    background-color: white; /* 콘텐츠 배경 색상 */
     margin: 0; /* 마진 제거 */
     padding: 0; /* 패딩 제거 */
     box-sizing: border-box; /* 패딩과 테두리를 포함하여 크기를 계산 */
@@ -18,6 +18,7 @@
 /* 부킹 헤더 스타일 */
 .booking-header {
     width: 100%;
+    position: relative; /* 다른 요소와 겹치지 않게 함 */
 }
 
 /* 이미지 컨테이너 스타일 */
@@ -86,7 +87,9 @@
 
 /**/
 .booking-body-logo{
-    margin: 30px 0px;
+    position: relative;
+
+    margin: 50px 0px;
 }
 
 .booking-body-logo > .bold-text {
@@ -99,4 +102,5 @@
     font-size: 14px; /* 작은 글자 크기 */
     color: #555; /* 텍스트 색상 */
 }
+
 
