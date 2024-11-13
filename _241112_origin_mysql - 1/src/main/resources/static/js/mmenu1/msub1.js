@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const treatment2Select = document.getElementById('treatment2');
     const submitButton = document.getElementById("submit-button");
     const reservationForm = document.getElementById("reservation-form");
+    const phoneNumberInput = document.getElementById('phonumber');
+    const emailInput = document.getElementById('email');
+    const emailError = document.getElementById('email-error');
 
     // 초기화: "1차 분류"가 선택되면 "2차 분류"에 맞는 옵션을 설정
     updatetreatment2Options(treatment1Select.value); // 페이지 로드 시 기본값에 맞게 업데이트
@@ -28,6 +31,27 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     treatment1Select.addEventListener('change', updateDetails);
     treatment2Select.addEventListener('change', updateDetails);
+
+    // 연락처 입력 필터 및 제한
+    phoneNumberInput.addEventListener('input', function (e) {
+        // 숫자만 입력되도록 필터링
+        this.value = this.value.replace(/[^0-9]/g, '');
+
+        // 글자수 11글자로 제한
+        if (this.value.length > 11) {
+            this.value = this.value.slice(0, 11);
+        }
+    });
+
+    // 이메일 형식 검증
+    emailInput.addEventListener('input', function (e) {
+        const emailValue = emailInput.value;
+        if (!emailValue.includes('@')) {
+            emailError.style.display = 'inline';
+        } else {
+            emailError.style.display = 'none';
+        }
+    });
 
     // "2차 분류" 옵션 업데이트 함수
     function updatetreatment2Options(treatment) {
@@ -93,6 +117,33 @@ document.addEventListener('DOMContentLoaded', function () {
     // 폼 제출 처리
     submitButton.addEventListener("click", function (event) {
         event.preventDefault();
+
+        // 필수 입력 항목이 모두 채워졌는지 확인
+        const requiredInputs = document.querySelectorAll("#reservation-form input[required], #reservation-form select[required]");
+        let allFieldsFilled = true;
+        let missingFields = [];
+
+        requiredInputs.forEach(input => {
+            if (!input.value || input.value === "1차 분류" || input.value === "2차 분류") {
+                allFieldsFilled = false;
+                missingFields.push(input.previousElementSibling.textContent);
+            }
+        });
+
+        if (!allFieldsFilled) {
+            alert("다음 필수 입력 항목을 채워주세요: " + missingFields.join(', '));
+            return;
+        }
+
+        // 이메일 형식 검증
+        const emailValue = emailInput.value;
+        if (!emailValue.includes('@')) {
+            emailError.textContent = '이메일 형식에 맞지 않습니다.';
+            emailError.style.display = 'inline';
+            return;
+        } else {
+            emailError.style.display = 'none';
+        }
 
         // 폼 데이터 수집
         const formData = new FormData(reservationForm);

@@ -39,6 +39,7 @@
 
     padding: 30px 40px;
     box-sizing: border-box; /* 패딩을 포함한 너비 계산 */
+    width: 750px;
     height: 700px;
 
 }
@@ -80,7 +81,8 @@
     border-bottom: none; /* 마지막 요소의 구분선 제거 */
 }
 
-.input-group .input-item {
+.input-item {
+    position: relative;
     display: flex;
     align-items: center; /* 항목 수직 중앙 정렬 */
     justify-content: space-between; /* 레이블과 입력 필드 양끝에 위치 */
@@ -90,15 +92,26 @@
     height: 100%
 }
 
+
+/* 에러 메시지 스타일 */
+.error-message {
+    right: 60px;
+    top: 51px;
+    position: absolute;
+    color: red;
+    font-size: 0.7em;
+    display: none; /* 기본적으로 숨김 */
+
+}
+
 .input-item > label {
-    /*background-color: #c75e5e;*/
     width: 80px; /* 레이블의 고정 너비 설정 */
     text-align: left; /* 레이블 텍스트 왼쪽 정렬 */
     font-weight: bold;
 }
 
 .input-item > input {
-    width: calc(100% - 80px); /* 입력 필드가 나머지 공간 차지 */
+    width: 220px;
     padding: 10px 10px;
     box-sizing: border-box; /* 패딩 포함한 너비 계산 */
     height: 50px;
@@ -192,3 +205,4 @@
     color: goldenrod; /* 로고 텍스트 색상 */
     margin-bottom: 18px; /* 로고와 폼 사이 간격 */
 }
+
